@@ -1,0 +1,17 @@
+{
+  "name": "bwc",
+  "version": "0.1.0",
+  "description": "🤖 Botway Core 📡",
+  "license": "MIT",
+  "homepage": "https://github.com/botwayorg/bwc",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/botwayorg/bwc.git"
+  },
+  "scripts": {
+    "dev": "turbo run dev --parallel"
+  },
+  "devDependencies": {
+    "turbo": "^1.6.3"
+  }
+}

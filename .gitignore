@@ -25,4 +25,4 @@ Cargo.lock
 # Turborepo
 .turbo
 
-api
+test

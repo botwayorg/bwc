@@ -1,5 +1,5 @@
 {
-  "name": "bw-api",
+  "name": "bwc-api",
   "version": "0.1.0",
   "description": "📡 Your Botway API Server.",
   "main": "server.ts",

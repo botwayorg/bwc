@@ -1,0 +1,35 @@
+{
+  "name": "bwc-app",
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite --port=3001",
+    "build": "tsc && vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "axios": "^1.1.3",
+    "classnames": "^2.3.2",
+    "csstype": "^3.1.1",
+    "postcss": "^8.4.19",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "react-hot-toast": "^2.4.0",
+    "react-toastify": "^9.1.1",
+    "sass": "^1.56.1",
+    "tailwindcss": "^3.2.3"
+  },
+  "devDependencies": {
+    "@types/node": "^18.11.9",
+    "@types/react": "^18.0.24",
+    "@types/react-dom": "^18.0.8",
+    "@vitejs/plugin-react": "^2.2.0",
+    "autoprefixer": "^10.4.13",
+    "postcss-custom-media": "^8.0.2",
+    "postcss-import": "^15.0.0",
+    "postcss-nested": "^6.0.0",
+    "serialize-javascript": "^6.0.0",
+    "typescript": "^4.6.4",
+    "vite": "^3.2.3"
+  }
+}

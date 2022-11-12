@@ -75,9 +75,9 @@ function Login() {
           <Toaster />
           <LogoSection />
 
-          <section className="justify-center px-4 md:px-0 md:flex md:w-2/3 md:border-r">
+          <section className="justify-center px-4 md:px-0 md:flex md:w-2/3 md:border-r border-gray-800">
             <div className="w-full max-w-sm py-4 mx-auto my-auto min-w-min md:py-9 md:w-7/12">
-              <h2 className="text-lg font-medium md:text-2xl">Sign in</h2>
+              <h2 className="text-lg font-medium md:text-2xl text-white">Sign in</h2>
               <a
                 onClick={() => toast(<FindYourPasswordMsg />)}
                 className="text-sm pt-1 cursor-pointer"
@@ -89,19 +89,20 @@ function Login() {
                   <div className="pt-8">
                     <label
                       htmlFor="username"
-                      className="block text-sm font-semibold"
+                      className="block text-gray-500 text-sm font-semibold"
                     >
                       Username
                     </label>
                     <div className="pt-4">
                       <input
-                        className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                        className="trsn bg border border-gray-800 placeholder:text-gray-400 text-white sm:text-sm rounded-lg focus:outline-none hover:border-blue-800 block w-full p-2"
                         type="text"
                         id="username"
                         ref={userRef}
                         autoComplete="off"
                         onChange={(e) => setUser(e.target.value)}
                         value={user}
+                        placeholder="User Machine Name"
                         required
                       />
                     </div>
@@ -110,17 +111,18 @@ function Login() {
                   <div className="mt-4">
                     <label
                       htmlFor="password"
-                      className="block text-sm font-semibold"
+                      className="block text-gray-500 text-sm font-semibold"
                     >
                       Password
                     </label>
                     <div className="pt-4">
                       <input
-                        className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                        className="trsn bg border border-gray-800 placeholder:text-gray-400 text-white sm:text-sm rounded-lg focus:outline-none hover:border-blue-800 block w-full p-2"
                         type="password"
                         id="password"
                         onChange={(e) => setPwd(e.target.value)}
                         value={pwd}
+                        placeholder="••••••••••••••••"
                         required
                       />
                     </div>

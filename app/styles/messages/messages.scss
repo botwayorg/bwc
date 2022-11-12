@@ -1,10 +1,12 @@
+@import "../vars.scss";
+
 .input {
   display: flex;
   flex-direction: column;
   margin-bottom: 32px;
 
   label {
-    font-size: var(--f-base);
+    font-size: $f-base;
     font-weight: 500;
     margin-bottom: 8px;
   }
@@ -15,19 +17,19 @@
     border: 1px solid #151c27;
     border-radius: 8px;
     color: white;
-    font-size: var(--f-sm);
+    font-size: $f-sm;
 
     &:focus {
-      border: 1px solid var(--c-primary);
+      border: 1px solid $c-primary;
       outline: 0;
       color: white;
     }
 
     &:global(.error) {
-      border-color: var(--c-danger);
+      border-color: $c-danger;
 
       &:focus {
-        border-color: var(--c-danger);
+        border-color: $c-danger;
         outline: 0;
         color: white;
       }
@@ -48,7 +50,7 @@
   }
 
   span {
-    color: var(--c-danger);
+    color: $c-danger;
     margin-top: 4px;
   }
 }
@@ -59,7 +61,7 @@
 
 .error {
   h5 {
-    color: var(--c-danger) !important;
+    color: $c-danger !important;
     margin-bottom: 4px;
     font-family: Inter;
   }
@@ -72,7 +74,7 @@
 
 .info {
   h5 {
-    color: var(--c-dark-40) !important;
+    color: $c-dark-40 !important;
     margin-bottom: 4px;
     font-family: Inter;
   }

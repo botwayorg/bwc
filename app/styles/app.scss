@@ -1,5 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@300..700&display=swap&display=swap");
-@import "vars.css";
+
+@import "vars.scss";
+@import "messages/messages.scss";
+@import "text/text.scss";
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -26,6 +30,13 @@ body {
   color: var(--gray-400);
 }
 
+.trsn {
+  transition-property: background-color, border-color, color, fill, stroke,
+    opacity, box-shadow, transform, filter, backdrop-filter;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
 img {
   max-width: 100%;
   vertical-align: middle;
@@ -33,7 +44,7 @@ img {
 
 a {
   text-decoration: none;
-  color: var(--gray-400);
+  color: $c-primary;
 }
 
 ::-webkit-scrollbar {
@@ -42,7 +53,7 @@ a {
 }
 
 ::-webkit-scrollbar-track {
-  background: var(--c-dark-60) !important;
+  background: $c-dark-60 !important;
 }
 
 ::-webkit-scrollbar-thumb {
@@ -61,7 +72,7 @@ a {
 }
 
 .button__round {
-  @apply rounded-full !important;
+  @apply rounded-full #{!important};
 }
 
 .button__secondary {

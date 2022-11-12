@@ -1,10 +1,10 @@
 import LogoSection from "../components/Logo";
 import { useRef, useState, useEffect, useContext } from "react";
-import AuthContext from "./context/authProvider";
-import axios from "./api/axios";
+import AuthContext from "../context/auth-provider";
+import Api from "../client";
 import toast, { Toaster } from "react-hot-toast";
 import { ErrorMsg } from "../components/Messages/error";
-import { FindYourPasswordMsg } from "../components/Messages/findYourPassword";
+import { FindYourPasswordMsg } from "../components/Messages/find-your-password";
 
 const LOGIN_URL = "/auth";
 
@@ -30,7 +30,7 @@ function Login() {
     e.preventDefault();
 
     try {
-      const response = await axios.post(
+      const response = await Api.post(
         LOGIN_URL,
         JSON.stringify({ user, pwd }),
         {

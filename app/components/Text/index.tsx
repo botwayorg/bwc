@@ -1,14 +1,12 @@
-import React from "react";
 import cn from "classnames";
-import styles from "./index.module.scss";
 
 const themeMap: any = {
-  hero: styles.hero,
-  heromd: styles.heroMd,
-  large: styles.heading,
-  medium: styles.medium,
-  regular: styles.regular,
-  small: styles.small,
+  hero: "hero",
+  heromd: "heroMd",
+  large: "heading",
+  medium: "medium",
+  regular: "regular",
+  small: "small",
 };
 
 export default function Text({
@@ -22,7 +20,7 @@ export default function Text({
   const Tag = tag;
   return (
     <Tag
-      className={cn(styles.text, themeMap[theme], { fancy }, className)}
+      className={cn("text", themeMap[theme], { fancy }, className)}
       {...props}
     >
       {children}

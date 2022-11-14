@@ -57,7 +57,12 @@ function Login() {
         setErrMsg("Login Failed");
       }
 
-      toast(<ErrorMsg msg={errMsg} />);
+      toast.error(<ErrorMsg msg={errMsg} />, {
+        style: {
+          borderRadius: "10px",
+        },
+        className: "bg-secondary",
+      });
 
       errRef.current.focus();
     }

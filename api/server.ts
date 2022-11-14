@@ -8,7 +8,12 @@ import { errorHandler } from "./middleware/errorHandler";
 import { verifyJWT } from "./middleware/verifyJWT";
 import cookieParser from "cookie-parser";
 import { credentials } from "./middleware/credentials";
+import { connectDB } from "./config/dbConnect";
+import { newAdmin } from "./controllers/newAdminController";
+import mongoose from "mongoose";
 const PORT = process.env.PORT || 3500;
+
+connectDB();
 
 app.set("views", __dirname);
 app.set("view engine", "pug");
@@ -39,9 +44,10 @@ app.use("/refresh", require("./routes/refresh"));
 app.use("/logout", require("./routes/logout"));
 
 app.use(verifyJWT);
+app.use("/users", require("./routes/api/users"));
 
 // catch 404 and forward to error handler
-app.use(function (req, res, next) {
+app.use((req, res, next) => {
   next(createError(404));
 });
 
@@ -64,4 +70,10 @@ app.use((err: any, req: any, res: any, next: any) => {
 
 app.use(errorHandler);
 
-app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+newAdmin();
+
+mongoose.connection.once("open", () => {
+  console.log("Connected to MongoDB");
+
+  app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+});

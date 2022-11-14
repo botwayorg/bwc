@@ -1,19 +1,15 @@
-const fsPromises = require("fs").promises;
-import { BWDB_PATH } from "../config/constants";
-import { bwdb } from "./db";
+import User from "../model/User";
 
 export const handleLogout = async (req: any, res: any) => {
   // On client, also delete the accessToken
   const cookies = req.cookies;
 
-  if (!cookies?.jwt) return res.sendStatus(204); // No content
+  if (!cookies?.jwt) return res.sendStatus(204); //No content
 
   const refreshToken = cookies.jwt;
 
   // Is refreshToken in db?
-  const foundUser = bwdb.admin.find(
-    (person: any) => person.refreshToken === refreshToken
-  );
+  const foundUser = await User.findOne({ refreshToken }).exec();
 
   if (!foundUser) {
     res.clearCookie("jwt", { httpOnly: true, sameSite: "None", secure: true });
@@ -22,21 +18,13 @@ export const handleLogout = async (req: any, res: any) => {
   }
 
   // Delete refreshToken in db
-  const otherAdmins = bwdb.admin.filter(
-    (person: any) => person.refreshToken !== foundUser.refreshToken
+  foundUser.refreshToken = foundUser.refreshToken.filter(
+    (rt: any) => rt !== refreshToken
   );
 
-  const currentUser = { ...foundUser, refreshToken: "" };
+  const result = await foundUser.save();
+  console.log(result);
 
-  bwdb.setAdmin([...otherAdmins, currentUser]);
-
-  await fsPromises.writeFile(BWDB_PATH, JSON.stringify(bwdb.admin));
-
-  res.clearCookie("jwt", {
-    httpOnly: true,
-    sameSite: "None",
-    secure: true,
-  });
-
+  res.clearCookie("jwt", { httpOnly: true, sameSite: "None", secure: true });
   res.sendStatus(204);
 };

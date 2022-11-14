@@ -77,12 +77,22 @@ function Login() {
 
           <section className="justify-center px-4 md:px-0 md:flex md:w-2/3 md:border-r border-gray-800">
             <div className="w-full max-w-sm py-4 mx-auto my-auto min-w-min md:py-9 md:w-7/12">
-              <h2 className="text-lg font-medium md:text-2xl text-white">Sign in</h2>
+              <h2 className="text-lg font-medium md:text-2xl text-white">
+                Sign in
+              </h2>
               <a
-                onClick={() => toast(<FindYourPasswordMsg />)}
+                onClick={() =>
+                  toast(<FindYourPasswordMsg />, {
+                    icon: "🔐",
+                    style: {
+                      borderRadius: "10px",
+                    },
+                    className: "bg-secondary",
+                  })
+                }
                 className="text-sm pt-1 cursor-pointer"
               >
-                How to find your password?
+                How I can find my password?
               </a>
               <div className="my-4">
                 <form onSubmit={handleSubmit}>

@@ -8,6 +8,7 @@ $c-black: black;
 $c-gray-400: #151c27;
 $c-text: black;
 $bg: hsl(250, 24%, 9%);
+$bg-secondary: hsl(220, 55%, 10%);
 
 $c-dark-20: #e3e3e3;
 $c-dark-30: #8b93a1;
@@ -27,3 +28,11 @@ $f-heading-large: 48px;
 $f-hero-md: 40px;
 $f-hero: 64px;
 $f-bold: 600;
+
+.bg {
+  background: $bg;
+}
+
+.bg-secondary {
+  background: $bg-secondary;
+}

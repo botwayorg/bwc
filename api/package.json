@@ -5,32 +5,36 @@
   "main": "server.ts",
   "license": "MIT",
   "scripts": {
-    "dev": "nodemon server.ts",
-    "run": "ts-node server.ts"
+    "dev": "ts-node-dev --respawn --transpile-only server.ts"
   },
   "dependencies": {
     "bcrypt": "^5.1.0",
     "cookie-parser": "^1.4.6",
     "cors": "^2.8.5",
-    "date-fns": "^2.29.3",
+    "dayjs": "^1.11.6",
     "express": "^4.18.2",
     "http-errors": "^2.0.0",
     "jsonwebtoken": "^8.5.1",
+    "lodash": "^4.17.21",
     "mongoose": "^6.7.2",
+    "nanoid": "^3.3.4",
+    "pino": "^8.7.0",
+    "pino-pretty": "^9.1.1",
     "pug": "^3.0.2",
-    "uuid": "^8.3.2"
+    "zod": "^3.19.1"
   },
   "devDependencies": {
     "@types/bcrypt": "^5.0.0",
+    "@types/body-parser": "^1.19.2",
     "@types/cookie-parser": "^1.4.3",
     "@types/cors": "^2.8.12",
     "@types/express": "^4.17.14",
     "@types/http-errors": "^2.0.1",
     "@types/jsonwebtoken": "^8.5.9",
+    "@types/lodash": "^4.14.189",
     "@types/node": "^18.11.9",
-    "@types/uuid": "^8.3.4",
-    "nodemon": "^2.0.20",
     "ts-node": "^10.9.1",
-    "typescript": "^4.8.4"
+    "ts-node-dev": "^2.0.0",
+    "typescript": "^4.9.3"
   }
 }

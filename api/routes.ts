@@ -44,13 +44,7 @@ function routes(app: Express) {
         message = "users collection aren't empty 👍";
       }
 
-      res.status(status).render("layout", {
-        message: JSON.stringify(
-          { status: status, message: message },
-          null,
-          " "
-        ).toString(),
-      });
+      res.status(status).send({ status, message });
     } catch (e) {}
   });
 

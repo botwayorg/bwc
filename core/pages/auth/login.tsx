@@ -36,7 +36,7 @@ function LoginPage() {
         withCredentials: true,
       });
 
-      router.push("/");
+      router.push("/dashboard");
     } catch (e: any) {
       setLoginError(e.message);
 

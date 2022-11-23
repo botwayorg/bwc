@@ -6,7 +6,7 @@ router.get("/", (req, res, next) => {
     message: JSON.stringify(
       { status: 200, message: "ok 👍" },
       null,
-      " "
+      ""
     ).toString(),
   });
 });
